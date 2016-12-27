@@ -1,0 +1,18 @@
+<div id="weekly">
+  <div class="top-bar">
+    <i class="fa fa-angle-left left-arrow" aria-hidden="true" ng-click="$ctrl.back()"></i>
+    {{$ctrl.startDate | amDateFormat:'M/D'}}-{{$ctrl.endDate | amDateFormat:'M/D'}}
+    <i class="fa fa-angle-right right-arrow" aria-hidden="true" ng-click="$ctrl.next()"></i>
+  </div>
+  <div class="content">
+  	<div class="starting">
+  		Starting Balance: {{$ctrl.basePay | currency}}
+  	</div>
+    <div ng-repeat="item in $ctrl.events" flex="90">
+      {{item.name}}: {{item.amount | currency}} | Due: {{item.date | amDateFormat:'Do'}}
+    </div>
+    <div class="balance">
+  	Money Left: {{$ctrl.balance | currency}}
+  </div>
+  </div>
+</div>

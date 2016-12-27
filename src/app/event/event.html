@@ -1,0 +1,35 @@
+<div id="event" layout="column" flex>
+  <form name="addEvent" ng-cloak>
+  	<div>
+    <span>Name</span>
+    <input type="text" name="name" ng-model="$ctrl.event.name">
+    </div>
+    <div>
+    <span>Amount</span>
+    <input type="text" name="amount" min="0.01" step="0.01" ng-model="$ctrl.event.amount">
+    </div>
+    <div>
+    <span>One Time</span>
+    <input type="checkbox" name="oneTime" ng-model="$ctrl.event.oneTime">
+    </div>
+    <div ng-if="!$ctrl.event.oneTime">
+      <span>Day</span>
+      <select ng-model="$ctrl.day" ng-options="page for page in $ctrl.range(1, 31)"></select>
+    </div>
+    <div ng-if="$ctrl.event.oneTime">
+      <span>Date</span>
+      <input type="date" ng-model="$ctrl.eventDate"></input>
+    </div>
+    <md-button class="delete" ng-click="$ctrl.delete($event)">
+        Delete
+      </md-button>
+    <md-dialog-actions layout="row">
+      <md-button ng-click="$ctrl.cancel()">
+        Cancel
+      </md-button>
+      <md-button ng-click="$ctrl.save()" type="submit">
+        Update
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</div>

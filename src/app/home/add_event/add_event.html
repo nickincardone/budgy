@@ -1,0 +1,29 @@
+<md-dialog id="add-event-modal" aria-label="Add Event">
+  <form name="addEvent" ng-cloak>
+    <span>Name</span>
+    <input type="text" name="name" ng-model="$ctrl.event.name">
+    <span>Amount</span>
+    <input type="text" name="amount" min="0.01" step="0.01" ng-model="$ctrl.event.amount">
+    <span>One Time</span>
+    <input type="checkbox" name="oneTime" ng-model="$ctrl.event.oneTime">
+    <div ng-if="!$ctrl.event.oneTime">
+      <span>Day</span>
+      <select ng-model="$ctrl.event.dayOfMonth" ng-options="page for page in $ctrl.range(1, 31)"></select> 
+    </div>
+    <div ng-if="$ctrl.event.oneTime">
+      <span>Date</span>
+      <input type="date" ng-model="$ctrl.event.date"></input> 
+    </div>
+
+    
+
+    <md-dialog-actions layout="row">
+      <md-button ng-click="$ctrl.cancel()">
+       Cancel
+      </md-button>
+      <md-button ng-click="$ctrl.add($ctrl.event)" type="submit">
+        Add
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app='budgy'>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- App Specific Files -->
+    <style> 
+        -webkit-font-smoothing: antialiased; 
+        -moz-osx-font-smoothing: grayscale; 
+    </style>
+    <link rel="stylesheet" href="/assets/css/vendor.css">
+    <link rel="stylesheet" href="/assets/css/source.css">
+
+    <title>Budgy</title>
+</head>
+
+<body layout="row" ng-controller="AppController as appCtrl">
+    <script src="/assets/js/vendor.js"></script>
+    <script src="/assets/js/source.js"></script>
+    <script src="/assets/js/templates.min.js"></script>
+    <script src="/assets/js/lib.js"></script>
+
+    <header></header>
+    <md-progress-linear ng-show="appCtrl.loading" class="global-loader" flex layout="column" layout-align="bottom center" md-mode="indeterminate"></md-progress-linear>
+    <ui-view class="main-view" layout="row" flex>
+        <md-progress-linear class="app-loader" flex layout="column" layout-align="bottom center" md-mode='indeterminate'></md-progress-linear>
+    </ui-view>
+</body>
+
+</html>

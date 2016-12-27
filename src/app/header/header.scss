@@ -1,0 +1,38 @@
+header {
+  .md-toolbar-tools {
+    background-color: $primary-color;
+    padding-left: 50px;
+    padding-right: 50px;
+    .bar {
+      position: relative;
+      top: 10px;
+      width: 100%;
+      img {
+        height: 22px;
+        position: absolute;
+        left: -30px;
+        top: -1px
+      }
+      h2 {
+
+        font-weight: 700;
+        color: #fff;
+        font-family: "PT Sans";
+        text-transform: uppercase;
+        width: 100%;
+        text-align: center;
+        letter-spacing: 3px;
+      }
+      i {
+        color: black;
+        top: 0px;
+        right: -30px;
+        position: absolute;
+        font-size: 24px;
+      }
+      .add {
+        float: right;
+      }
+    }
+  }
+}

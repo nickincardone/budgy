@@ -1,0 +1,7 @@
+node_modules/
+platforms/
+plugins/
+.bowerrc
+www/
+.DS_Store
+src/bower_components/

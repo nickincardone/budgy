@@ -1,0 +1,14 @@
+<div id="home" layout="column" flex>
+	<div class="" ng-click="$ctrl.showAdvanced($event)">You get paid Biweekly, on Friday</div>
+	<div></div>
+	<md-button ng-click="$ctrl.goToWeekly($ctrl.events)">
+        Go To Weekly
+      </md-button>
+	<div>Next pay day: {{$ctrl.nextDayPretty}}</div>
+	<hr>
+	<div class="items">
+	<div ng-repeat="item in $ctrl.events track by $index" class="item">
+		{{item.name}}: {{item.amount}} due {{item.date  | amDateFormat:'Do'}} <span ng-click="$ctrl.edit(item)"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+	</div>
+	</div>
+</div>
