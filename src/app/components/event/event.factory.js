@@ -111,6 +111,7 @@
       for (var i = 0; i < factory.events.length; i++) {
         factory.events[i].date = moment(factory.events[i].date);
         factory.events[i].id = Math.random();
+        factory.events[i].daysTil = factory.events[i].date.diff(moment(), 'days') + 1;
       }
     }
 

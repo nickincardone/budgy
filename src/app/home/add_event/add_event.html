@@ -8,7 +8,7 @@
     <input type="checkbox" name="oneTime" ng-model="$ctrl.event.oneTime">
     <div ng-if="!$ctrl.event.oneTime">
       <span>Day</span>
-      <select ng-model="$ctrl.event.dayOfMonth" ng-options="page for page in $ctrl.range(1, 31)"></select> 
+      <select ng-model="$ctrl.event.dayOfMonth" ng-options="$ctrl.getOrdinal(day) for day in $ctrl.range(1, 31)"></select> 
     </div>
     <div ng-if="$ctrl.event.oneTime">
       <span>Date</span>

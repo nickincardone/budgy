@@ -304,29 +304,13 @@ function testWatchHeadless(singleRun, done) {
 
 /* Run the watch task when gulp is called without arguments */
 gulp.task('default', function () {
-    gutil.env.NODE_ENV = 'develop';
-    gutil.env.openBS = true;
-    runSequence(
-        'build',
-        'images',
-        'fonts',
-        'nodemon',
-        'browser-sync'
-    );
-    gutil.env.includeTests ? testWatch(false) : '';
-    gulp.watch(input.source_js, ['jshint', 'build-source-js'], reload);
-    gulp.watch(input.source_sass, ['build-source-sass'], reload);
-    gulp.watch(input.vendor_css, ['build-vendor-css'], reload);
-    gulp.watch(input.lib_js, ['build-lib-js'], reload);
-    gulp.watch(input.lib_css, ['build-source-sass'], reload);
-    gulp.watch(input.html, ['html2js'], reload);
-    gulp.watch(['server.js', 'server/**/*.js', 'config/config.json', 'public/index.html'], reload);
+    buildSequence();
 });
 
 function buildSequence() {
     runSequence(
         'build',
-        'test',
+        //'test',
         'images',
         'fonts'
     );
